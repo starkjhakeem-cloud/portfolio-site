@@ -31,16 +31,16 @@ For production locally, run `npm run start` after building. With the server runn
 - `app/fonts/`: local Latin variable fonts and their SIL Open Font Licenses.
 - `app/layout.tsx`, `app/robots.ts`, `app/sitemap.ts`: metadata and crawler configuration.
 - `public/projects/`: optimized WebP screenshots from the original project repositories.
-- `public/Jhakeem_Moultrie_Software_Engineer_Resume.pdf`: the user-selected résumé, preserved without modification.
+- `public/Jhakeem_Moultrie_Software_Engineer_Resume.pdf`: the user-selected résumé with the removed project entry omitted.
 - `docs/portfolio-refresh.md`: implementation decisions, source provenance, and validation record.
 
 ## Updating content
 
 Edit `app/data/portfolio.ts` to update profile links, technical skills, project descriptions, or repository URLs. Only add a `demo` URL after opening it and verifying it runs the intended project. Check new technical claims against the actual project source.
 
-The current Link & Notes repository returns 404. Its card intentionally provides a contact action instead of an unavailable repository or unverified technical claims. Restore its details after the current source is available for inspection. Removing this unverified archive from featured work is recommended for final review unless its source or a credible demonstration can be restored; it has not been silently removed.
+The showcase contains exactly two verified projects: Finance Tracker Dashboard and Job Application Tracker. Counts are derived from project data: two total, one Web, and one Mobile. Both cards receive full-width feature rows on desktop and stack their image/content at tablet and mobile widths.
 
-Replace the résumé PDF at the same public path to update the download. Its current document includes the old Link & Notes URL; the site does not alter the original résumé. Update `profile.siteUrl` if the portfolio's production domain changes, and regenerate `public/social-preview.png` if its branding changes.
+Replace the résumé PDF at the same public path to update the download. The website copy omits the removed project entry; the original Desktop résumé is preserved. Update `profile.siteUrl` if the portfolio's production domain changes, and regenerate `public/social-preview.png` if its branding changes.
 
 ## Interaction and accessibility
 

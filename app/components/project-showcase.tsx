@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { profile, projects, type Project } from "@/app/data/portfolio";
+import { projects, type Project } from "@/app/data/portfolio";
 import { Icon } from "./ui-icon";
 import {
   filterProjects,
@@ -11,20 +11,6 @@ import {
 } from "@/app/lib/project-filter";
 
 function ProjectVisual({ project }: { project: Project }) {
-  if (!project.image)
-    return (
-      <div className="project-visual notes-visual" aria-hidden="true">
-        <div className="notes-orbit" />
-        <div className="notes-mark">
-          <Icon name="file" width="48" height="48" />
-          <span>
-            links <i>&</i> notes
-            <span className="notes-mark-line" />
-          </span>
-        </div>
-        <span className="visual-caption">A SPACE FOR IDEAS.</span>
-      </div>
-    );
   return (
     <div className={`project-visual ${project.id}-visual`}>
       <span className="visual-corner" aria-hidden="true">
@@ -43,7 +29,7 @@ function ProjectVisual({ project }: { project: Project }) {
         ) : null}
         <Image
           src={project.image}
-          alt={project.imageAlt ?? project.title}
+          alt={project.imageAlt}
           width={project.id === "finance" ? 1200 : 540}
           height={project.id === "finance" ? 1057 : 1163}
           sizes={
@@ -79,47 +65,29 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="project-kind">{project.kind}</p>
         <h3 id={`project-${project.id}-title`}>{project.title}</h3>
         <p className="project-description">{project.description}</p>
-        {project.stack.length > 0 ? (
-          <ul className="tag-list" aria-label="Technologies">
-            {project.stack.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="source-note" role="note">
-            <span className="status-dot muted-dot" /> Source and demonstration
-            unverified
-          </p>
-        )}
+        <ul className="tag-list" aria-label="Technologies">
+          {project.stack.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
         <div className="project-links">
-          {project.image ? (
-            <a
-              href={project.image}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View screenshot: ${project.title} (opens in new tab)`}
-            >
-              View screenshot <Icon name="northeast" width="15" height="15" />
-            </a>
-          ) : null}
-          {project.github ? (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View source: ${project.title} on GitHub (opens in new tab)`}
-            >
-              <Icon name="github" width="17" height="17" /> View source{" "}
-              <Icon name="northeast" width="15" height="15" />
-            </a>
-          ) : (
-            <a
-              href={`mailto:${profile.email}?subject=Link%20%26%20Notes%20Application`}
-            >
-              Ask about the project{" "}
-              <Icon name="northeast" width="15" height="15" />
-            </a>
-          )}
+          <a
+            href={project.image}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View screenshot: ${project.title} (opens in new tab)`}
+          >
+            View screenshot <Icon name="northeast" width="15" height="15" />
+          </a>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View source: ${project.title} on GitHub (opens in new tab)`}
+          >
+            <Icon name="github" width="17" height="17" /> View source{" "}
+            <Icon name="northeast" width="15" height="15" />
+          </a>
           {project.demo ? (
             <a href={project.demo} target="_blank" rel="noopener noreferrer">
               Live demo <Icon name="northeast" width="15" height="15" />
@@ -181,7 +149,7 @@ export function ProjectShowcase() {
         id="project-results"
         key={filter}
         data-result-count={visible.length}
-        className={`project-grid ${filter !== "All projects" ? "is-filtered" : ""}`}
+        className="project-grid"
       >
         {visible.map((project) => (
           <ProjectCard key={project.id} project={project} />

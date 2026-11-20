@@ -1,8 +1,8 @@
 [
   {
     "documentWidth": 320,
-    "fonts": "loaded",
-    "height": 8149,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 288,
     "images": [
       {
         "loaded": true,
@@ -14,45 +14,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 970,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 288
       },
       {
-        "height": 3403,
-        "id": "projects",
-        "top": 1168
-      },
-      {
-        "height": 1193,
-        "id": "about",
-        "top": 4571
-      },
-      {
-        "height": 1397,
-        "id": "skills",
-        "top": 5764
-      },
-      {
-        "height": 300,
-        "id": "resume",
-        "top": 7162
-      },
-      {
-        "height": 530,
-        "id": "contact",
-        "top": 7461
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 288
       }
     ],
+    "removedProjectVisible": false,
     "width": 320
   },
   {
     "documentWidth": 360,
-    "fonts": "loaded",
-    "height": 7888,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 320,
     "images": [
       {
         "loaded": true,
@@ -64,45 +44,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 1009,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 320
       },
       {
-        "height": 3218,
-        "id": "projects",
-        "top": 1208
-      },
-      {
-        "height": 1153,
-        "id": "about",
-        "top": 4426
-      },
-      {
-        "height": 1314,
-        "id": "skills",
-        "top": 5579
-      },
-      {
-        "height": 308,
-        "id": "resume",
-        "top": 6893
-      },
-      {
-        "height": 530,
-        "id": "contact",
-        "top": 7200
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 320
       }
     ],
+    "removedProjectVisible": false,
     "width": 360
   },
   {
     "documentWidth": 375,
-    "fonts": "loaded",
-    "height": 7827,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 335,
     "images": [
       {
         "loaded": true,
@@ -114,45 +74,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 1023,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 335
       },
       {
-        "height": 3198,
-        "id": "projects",
-        "top": 1221
-      },
-      {
-        "height": 1098,
-        "id": "about",
-        "top": 4419
-      },
-      {
-        "height": 1314,
-        "id": "skills",
-        "top": 5517
-      },
-      {
-        "height": 308,
-        "id": "resume",
-        "top": 6831
-      },
-      {
-        "height": 531,
-        "id": "contact",
-        "top": 7138
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 335
       }
     ],
+    "removedProjectVisible": false,
     "width": 375
   },
   {
     "documentWidth": 390,
-    "fonts": "loaded",
-    "height": 7621,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 350,
     "images": [
       {
         "loaded": true,
@@ -164,45 +104,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 983,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 350
       },
       {
-        "height": 3141,
-        "id": "projects",
-        "top": 1182
-      },
-      {
-        "height": 1068,
-        "id": "about",
-        "top": 4322
-      },
-      {
-        "height": 1233,
-        "id": "skills",
-        "top": 5390
-      },
-      {
-        "height": 308,
-        "id": "resume",
-        "top": 6623
-      },
-      {
-        "height": 532,
-        "id": "contact",
-        "top": 6931
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 350
       }
     ],
+    "removedProjectVisible": false,
     "width": 390
   },
   {
     "documentWidth": 414,
-    "fonts": "loaded",
-    "height": 7477,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 374,
     "images": [
       {
         "loaded": true,
@@ -214,45 +134,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 1005,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 374
       },
       {
-        "height": 3073,
-        "id": "projects",
-        "top": 1203
-      },
-      {
-        "height": 993,
-        "id": "about",
-        "top": 4277
-      },
-      {
-        "height": 1233,
-        "id": "skills",
-        "top": 5269
-      },
-      {
-        "height": 308,
-        "id": "resume",
-        "top": 6502
-      },
-      {
-        "height": 534,
-        "id": "contact",
-        "top": 6810
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 374
       }
     ],
+    "removedProjectVisible": false,
     "width": 414
   },
   {
     "documentWidth": 430,
-    "fonts": "loaded",
-    "height": 7377,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 390,
     "images": [
       {
         "loaded": true,
@@ -264,45 +164,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 992,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 390
       },
       {
-        "height": 3028,
-        "id": "projects",
-        "top": 1191
-      },
-      {
-        "height": 993,
-        "id": "about",
-        "top": 4219
-      },
-      {
-        "height": 1233,
-        "id": "skills",
-        "top": 5211
-      },
-      {
-        "height": 264,
-        "id": "resume",
-        "top": 6444
-      },
-      {
-        "height": 536,
-        "id": "contact",
-        "top": 6708
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 390
       }
     ],
+    "removedProjectVisible": false,
     "width": 430
   },
   {
     "documentWidth": 768,
-    "fonts": "loaded",
-    "height": 6006,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 704,
     "images": [
       {
         "loaded": true,
@@ -314,45 +194,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 730,
-        "id": "top",
-        "top": 77
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 704
       },
       {
-        "height": 2578,
-        "id": "projects",
-        "top": 909
-      },
-      {
-        "height": 912,
-        "id": "about",
-        "top": 3487
-      },
-      {
-        "height": 686,
-        "id": "skills",
-        "top": 4399
-      },
-      {
-        "height": 217,
-        "id": "resume",
-        "top": 5085
-      },
-      {
-        "height": 596,
-        "id": "contact",
-        "top": 5302
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 704
       }
     ],
+    "removedProjectVisible": false,
     "width": 768
   },
   {
     "documentWidth": 1024,
-    "fonts": "loaded",
-    "height": 5726,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 960,
     "images": [
       {
         "loaded": true,
@@ -364,45 +224,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 730,
-        "id": "top",
-        "top": 92
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 960
       },
       {
-        "height": 2491,
-        "id": "projects",
-        "top": 924
-      },
-      {
-        "height": 704,
-        "id": "about",
-        "top": 3415
-      },
-      {
-        "height": 651,
-        "id": "skills",
-        "top": 4119
-      },
-      {
-        "height": 217,
-        "id": "resume",
-        "top": 4770
-      },
-      {
-        "height": 632,
-        "id": "contact",
-        "top": 4987
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 960
       }
     ],
+    "removedProjectVisible": false,
     "width": 1024
   },
   {
     "documentWidth": 1280,
-    "fonts": "loaded",
-    "height": 5603,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1184,
     "images": [
       {
         "loaded": true,
@@ -414,45 +254,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 764,
-        "id": "top",
-        "top": 92
+        "columns": "644.727px 537.273px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1184
       },
       {
-        "height": 2118,
-        "id": "projects",
-        "top": 958
-      },
-      {
-        "height": 748,
-        "id": "about",
-        "top": 3076
-      },
-      {
-        "height": 725,
-        "id": "skills",
-        "top": 3824
-      },
-      {
-        "height": 249,
-        "id": "resume",
-        "top": 4549
-      },
-      {
-        "height": 698,
-        "id": "contact",
-        "top": 4799
+        "columns": "644.727px 537.273px",
+        "title": "Job Application Tracker",
+        "width": 1184
       }
     ],
+    "removedProjectVisible": false,
     "width": 1280
   },
   {
     "documentWidth": 1440,
-    "fonts": "loaded",
-    "height": 5596,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1200,
     "images": [
       {
         "loaded": true,
@@ -464,45 +284,25 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 764,
-        "id": "top",
-        "top": 92
+        "columns": "653.453px 544.547px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1200
       },
       {
-        "height": 2134,
-        "id": "projects",
-        "top": 958
-      },
-      {
-        "height": 748,
-        "id": "about",
-        "top": 3092
-      },
-      {
-        "height": 693,
-        "id": "skills",
-        "top": 3840
-      },
-      {
-        "height": 249,
-        "id": "resume",
-        "top": 4534
-      },
-      {
-        "height": 707,
-        "id": "contact",
-        "top": 4783
+        "columns": "653.453px 544.547px",
+        "title": "Job Application Tracker",
+        "width": 1200
       }
     ],
+    "removedProjectVisible": false,
     "width": 1440
   },
   {
     "documentWidth": 1920,
-    "fonts": "loaded",
-    "height": 5642,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1200,
     "images": [
       {
         "loaded": true,
@@ -514,39 +314,19 @@
       }
     ],
     "outOfBoundsControls": [],
-    "scrollY": 0,
-    "sections": [
+    "projects": [
       {
-        "height": 810,
-        "id": "top",
-        "top": 92
+        "columns": "653.453px 544.547px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1200
       },
       {
-        "height": 2134,
-        "id": "projects",
-        "top": 1004
-      },
-      {
-        "height": 748,
-        "id": "about",
-        "top": 3138
-      },
-      {
-        "height": 693,
-        "id": "skills",
-        "top": 3886
-      },
-      {
-        "height": 249,
-        "id": "resume",
-        "top": 4580
-      },
-      {
-        "height": 707,
-        "id": "contact",
-        "top": 4829
+        "columns": "653.453px 544.547px",
+        "title": "Job Application Tracker",
+        "width": 1200
       }
     ],
+    "removedProjectVisible": false,
     "width": 1920
   }
 ]

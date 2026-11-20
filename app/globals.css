@@ -633,7 +633,7 @@ h2 {
 }
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 25px;
 }
 .project-card {
@@ -650,7 +650,8 @@ h2 {
   border-color: #609de54d;
   box-shadow: 0 8px 35px #0002;
 }
-.project-finance {
+.project-finance,
+.project-jobs {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -658,7 +659,8 @@ h2 {
 .project-content {
   padding: 30px;
 }
-.project-finance > .project-content {
+.project-finance > .project-content,
+.project-jobs > .project-content {
   padding: 38px;
 }
 .project-overline {
@@ -685,7 +687,8 @@ h2 {
   line-height: 1.25;
   max-width: 350px;
 }
-.project-finance h3 {
+.project-finance h3,
+.project-jobs h3 {
   font-size: 32px;
 }
 .project-description {
@@ -813,6 +816,12 @@ h2 {
   color: #acb8ca;
   margin: auto;
 }
+.project-jobs .project-visual {
+  border-bottom: 0;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
 .jobs-visual {
   background:
     radial-gradient(ellipse at 70% 70%, #21568055, transparent 70%), #0c1620;
@@ -829,9 +838,6 @@ h2 {
 }
 .project-card:hover .jobs-visual .project-image-frame {
   transform: rotate(5deg) translateY(-6px);
-}
-.project-jobs .project-content {
-  padding-top: 29px;
 }
 .project-details {
   border-top: 1px solid #ffffff10;
@@ -877,73 +883,6 @@ h2 {
   font-size: 13px;
   line-height: 1.9;
   color: #9caabf;
-}
-.notes-visual {
-  display: grid;
-  place-items: center;
-  min-height: 450px;
-  background:
-    radial-gradient(ellipse at 45% 50%, #203f5760, transparent 70%), #0b141e;
-}
-.notes-mark {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  transform: rotate(-7deg);
-  color: #8ab8d1;
-}
-.notes-mark > span {
-  font-size: 29px;
-  font-weight: 450;
-  letter-spacing: -1.7px;
-}
-.notes-mark i {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  color: #d7f2ff;
-}
-.notes-mark-line {
-  display: block;
-  margin-top: 11px;
-  height: 2px;
-  width: 70px;
-  background: linear-gradient(90deg, #5bcef2, transparent);
-}
-.notes-orbit {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border: 1px solid #486e8f30;
-  border-radius: 50%;
-}
-.notes-orbit::before,
-.notes-orbit::after {
-  content: "";
-  position: absolute;
-  inset: 35px;
-  border: 1px dashed #486e8f35;
-  border-radius: 50%;
-}
-.notes-orbit::after {
-  inset: -35px;
-  border-style: solid;
-  opacity: 0.4;
-}
-.source-note {
-  font-size: 12px;
-  color: #8fa2b7;
-  display: flex;
-  gap: 9px;
-  align-items: center;
-  margin-top: 23px;
-}
-.muted-dot {
-  background: #90a2b4;
-  box-shadow: none;
-  width: 4px;
-  height: 4px;
 }
 .all-repositories {
   display: flex;
@@ -1407,10 +1346,12 @@ h2 {
   .section {
     padding-block: 90px;
   }
-  .project-finance > .project-content {
+  .project-finance > .project-content,
+  .project-jobs > .project-content {
     padding: 29px;
   }
-  .project-finance {
+  .project-finance,
+  .project-jobs {
     grid-template-columns: 1fr 1fr;
   }
   .project-finance .project-visual {
@@ -1652,7 +1593,8 @@ h2 {
     grid-template-columns: 1fr;
     gap: 22px;
   }
-  .project-finance {
+  .project-finance,
+  .project-jobs {
     display: block;
     grid-column: auto;
   }
@@ -1669,6 +1611,7 @@ h2 {
     transform: perspective(1000px) rotateY(3deg) rotateZ(-2deg);
   }
   .project-finance > .project-content,
+  .project-jobs > .project-content,
   .project-content {
     padding: 25px;
   }
@@ -1699,8 +1642,7 @@ h2 {
     margin-top: 21px;
     flex-wrap: wrap;
   }
-  .jobs-visual,
-  .notes-visual {
+  .jobs-visual {
     min-height: 400px;
   }
   .jobs-visual .project-image-frame {
@@ -1715,9 +1657,6 @@ h2 {
   .visual-caption {
     font-size: 5px;
     left: 20px;
-  }
-  .notes-mark > span {
-    font-size: 30px;
   }
   .all-repositories {
     align-items: flex-start;
@@ -1927,7 +1866,8 @@ h2 {
     gap: 8px;
   }
   .project-content,
-  .project-finance > .project-content {
+  .project-finance > .project-content,
+  .project-jobs > .project-content {
     padding: 22px;
   }
   .contact-email {
@@ -2011,14 +1951,16 @@ h2 {
     color: #111;
     border-color: #ccc;
   }
-  .project-visual {
+  .project-card .project-visual {
     display: none;
   }
-  .project-finance {
+  .project-finance,
+  .project-jobs {
     display: block;
   }
   .project-content,
-  .project-finance > .project-content {
+  .project-finance > .project-content,
+  .project-jobs > .project-content {
     padding: 15px;
   }
   .project-description,
@@ -2161,10 +2103,12 @@ html {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .project-finance {
+  .project-finance,
+  .project-jobs {
     display: block;
   }
-  .project-finance .project-visual {
+  .project-finance .project-visual,
+  .project-jobs .project-visual {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -2172,21 +2116,10 @@ html {
     max-width: 560px;
   }
 }
-.project-grid[data-result-count="1"] {
-  grid-template-columns: 1fr;
-}
-@media (min-width: 1025px) {
-  .project-grid[data-result-count="1"] .project-jobs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
 @media (max-width: 767px) {
-  .notes-visual {
-    min-height: 400px;
-  }
   .project-content h3,
-  .project-finance h3 {
+  .project-finance h3,
+  .project-jobs h3 {
     overflow-wrap: anywhere;
   }
   .contact-actions {

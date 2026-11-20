@@ -102,22 +102,21 @@ test("platform filtering includes all records, correct platforms, and empty resu
   const records = Object.freeze([
     { id: "finance", category: "Web" },
     { id: "jobs", category: "Mobile" },
-    { id: "notes", category: "Web" },
   ]);
   assert.deepEqual(
     filterProjects(records, "All projects").map((x) => x.id),
-    ["finance", "jobs", "notes"],
+    ["finance", "jobs"],
   );
   assert.deepEqual(
     filterProjects(records, "Web").map((x) => x.id),
-    ["finance", "notes"],
+    ["finance"],
   );
   assert.deepEqual(
     filterProjects(records, "Mobile").map((x) => x.id),
     ["jobs"],
   );
   assert.deepEqual(filterProjects([], "Mobile"), []);
-  assert.equal(records.length, 3);
+  assert.equal(records.length, 2);
 });
 
 test("clipboard feedback waits for completion and reports rejection or missing support", async () => {

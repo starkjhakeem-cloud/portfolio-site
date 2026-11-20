@@ -15,12 +15,11 @@ export type Project = {
   kind: string;
   description: string;
   stack: string[];
-  github?: string;
+  github: string;
   demo?: string;
-  image?: string;
-  imageAlt?: string;
+  image: string;
+  imageAlt: string;
   details: { title: string; body: string }[];
-  verified: boolean;
 };
 
 export const projects: Project[] = [
@@ -32,12 +31,11 @@ export const projects: Project[] = [
     kind: "Data visualization · Personal finance",
     description:
       "Making everyday finances easier to understand. A dashboard that brings transactions, balances, and spending patterns into one clear view.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/starkjhakeem-cloud/finance-tracker-dashboard",
     image: "/projects/finance-dashboard.webp",
     imageAlt:
       "Finance Tracker with balance, income, expenses, transaction form, and recent transactions",
-    verified: true,
     details: [
       {
         title: "The problem",
@@ -77,12 +75,11 @@ export const projects: Project[] = [
     kind: "Mobile development · Career organization",
     description:
       "A little more clarity in the job search. A mobile application for organizing opportunities, tracking applications, and keeping the next step in sight.",
-    stack: ["React Native", "Expo", "TypeScript", "AsyncStorage"],
+    stack: ["React Native", "TypeScript", "Expo"],
     github: "https://github.com/starkjhakeem-cloud/job-tracker-react-native",
     image: "/projects/job-tracker.webp",
     imageAlt:
       "Job Tracker mobile dashboard showing application statistics, search, status filters, and an application card",
-    verified: true,
     details: [
       {
         title: "The problem",
@@ -113,18 +110,6 @@ export const projects: Project[] = [
         body: "Normalize status values, strengthen validation and storage recovery, and then explore optional backup or synchronization. These are proposed next steps, not existing capabilities.",
       },
     ],
-  },
-  {
-    id: "notes",
-    number: "03",
-    title: "Link & Notes Application",
-    category: "Web",
-    kind: "Project archive",
-    description:
-      "Listed from earlier portfolio records. Its source code and a working demonstration could not be verified. Get in touch for current project information.",
-    stack: [],
-    verified: false,
-    details: [],
   },
 ];
 

@@ -40,8 +40,13 @@ assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
 assert.ok(html.includes('property="og:image"'));
 assert.ok(!/codex|openai|chatgpt/i.test(html));
 assert.ok(
-  !html.includes('href="https://github.com/starkjhakeem-cloud/link-notes-app"'),
+  !/link(?:\s|&amp;|&|%20|%26|-)*notes|repository currently unavailable|source and demonstration unverified/i.test(
+    html,
+  ),
 );
+assert.equal((html.match(/<article class="project-card /g) || []).length, 2);
+for (const title of ["Finance Tracker Dashboard", "Job Application Tracker"])
+  assert.ok(html.includes(title));
 for (const id of ["top", "projects", "about", "skills", "resume", "contact"])
   assert.ok(html.includes(`id="${id}" tabindex="-1"`));
 const pdf = results.at(-1).bytes;
