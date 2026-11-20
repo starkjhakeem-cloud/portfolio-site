@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 const title = "Jhakeem Moultrie | Software Engineering Portfolio";
 const description =
-  "Software engineering student and U.S. Army veteran building thoughtful web and mobile applications with React, Next.js, TypeScript, and React Native. Explore projects, skills, and résumé.";
+  "Jhakeem Moultrie’s software engineering portfolio: HELIOS ONE, an independent proprietary AI systems R&D project, alongside frontend and mobile applications.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   keywords: [
     "Jhakeem Moultrie",
     "software engineering",
+    "HELIOS ONE",
+    "AI systems engineering",
     "React",
     "Next.js",
     "TypeScript",

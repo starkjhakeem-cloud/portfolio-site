@@ -100,12 +100,13 @@ test("platform filtering includes all records, correct platforms, and empty resu
     "Project filtering helper must be implemented",
   );
   const records = Object.freeze([
+    { id: "helios", category: "Systems" },
     { id: "finance", category: "Web" },
     { id: "jobs", category: "Mobile" },
   ]);
   assert.deepEqual(
     filterProjects(records, "All projects").map((x) => x.id),
-    ["finance", "jobs"],
+    ["helios", "finance", "jobs"],
   );
   assert.deepEqual(
     filterProjects(records, "Web").map((x) => x.id),
@@ -116,7 +117,11 @@ test("platform filtering includes all records, correct platforms, and empty resu
     ["jobs"],
   );
   assert.deepEqual(filterProjects([], "Mobile"), []);
-  assert.equal(records.length, 2);
+  assert.deepEqual(
+    filterProjects(records, "Systems").map((x) => x.id),
+    ["helios"],
+  );
+  assert.equal(records.length, 3);
 });
 
 test("clipboard feedback waits for completion and reports rejection or missing support", async () => {
@@ -161,4 +166,19 @@ test("clipboard feedback waits for completion and reports rejection or missing s
     "failed",
   );
   assert.equal(await copyText("email", undefined), "failed");
+});
+
+// Prevent private project material from becoming a public source or image link.
+test("the proprietary flagship exposes only its approved overview", async () => {
+  const { projects } = await loadTypeScript("../app/data/portfolio.ts");
+  const flagship = projects[0];
+  assert.equal(flagship.id, "helios");
+  assert.equal(flagship.access, "proprietary");
+  assert.equal(flagship.category, "Systems");
+  for (const key of ["github", "demo", "image", "imageAlt"])
+    assert.equal(flagship[key], undefined);
+  assert.deepEqual(
+    projects.map((project) => project.id),
+    ["helios", "finance", "jobs"],
+  );
 });

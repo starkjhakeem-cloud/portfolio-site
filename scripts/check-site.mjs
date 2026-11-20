@@ -44,9 +44,26 @@ assert.ok(
     html,
   ),
 );
-assert.equal((html.match(/<article class="project-card /g) || []).length, 2);
-for (const title of ["Finance Tracker Dashboard", "Job Application Tracker"])
+assert.equal((html.match(/<article class="project-card /g) || []).length, 3);
+for (const title of [
+  "HELIOS ONE",
+  "Finance Tracker Dashboard",
+  "Job Application Tracker",
+])
   assert.ok(html.includes(title));
+const flagship = html.match(
+  /<article class="project-card project-helios"[\s\S]*?<\/article>/,
+)[0];
+assert.ok(flagship.includes("Proprietary Project — Source Private"));
+assert.ok(!/<a\b|<img\b|github\.com/i.test(flagship));
+assert.ok(flagship.includes("CONCEPT VISUAL"));
+const projectList = [
+  ...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs),
+]
+  .map((match) => JSON.parse(match[1]))
+  .find((item) => item["@type"] === "ItemList");
+assert.equal(projectList.numberOfItems, 3);
+assert.equal(projectList.itemListElement[0].item.name, "HELIOS ONE");
 for (const id of ["top", "projects", "about", "skills", "resume", "contact"])
   assert.ok(html.includes(`id="${id}" tabindex="-1"`));
 const pdf = results.at(-1).bytes;

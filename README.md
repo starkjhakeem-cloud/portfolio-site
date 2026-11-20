@@ -36,9 +36,9 @@ For production locally, run `npm run start` after building. With the server runn
 
 ## Updating content
 
-Edit `app/data/portfolio.ts` to update profile links, technical skills, project descriptions, or repository URLs. Only add a `demo` URL after opening it and verifying it runs the intended project. Check new technical claims against the actual project source.
+Edit `app/data/portfolio.ts` to update profile links, technical skills, project descriptions, or repository URLs. The proprietary project type forbids repository, demo, and screenshot properties; keep HELIOS ONE content limited to approved public-facing summaries. Only add a `demo` URL after opening it and verifying it runs the intended project. Check new technical claims against the actual project source.
 
-The showcase contains exactly two verified projects: Finance Tracker Dashboard and Job Application Tracker. Counts are derived from project data: two total, one Web, and one Mobile. Both cards receive full-width feature rows on desktop and stack their image/content at tablet and mobile widths.
+The showcase leads with HELIOS ONE, a proprietary independent AI systems R&D project, followed by Finance Tracker Dashboard and Job Application Tracker. Counts are derived from project data: three total, one Systems, one Web, and one Mobile. Cards receive full-width feature rows on desktop and stack their image/content at tablet and mobile widths. The Systems card uses a clearly labeled conceptual identity visual; no private source links, screenshots, configuration, or internal assets are included. Implemented capabilities and research goals are distinguished.
 
 Replace the résumé PDF at the same public path to update the download. The website copy omits the removed project entry; the original Desktop résumé is preserved. Update `profile.siteUrl` if the portfolio's production domain changes, and regenerate `public/social-preview.png` if its branding changes.
 
@@ -51,3 +51,5 @@ No analytics, contact-form service, animation library, or new runtime dependency
 Changes are prepared on `portfolio-refresh-2026`. `vercel.json` disables automatic Git deployments for this development branch. Publishing or merging to `main` requires separate approval.
 
 The application-wide refinement findings, source evidence, responsive checks, and remaining release considerations are recorded in [the refinement review](docs/portfolio-refinement-review.md).
+
+The flagship integration and privacy-focused verification are recorded in [the HELIOS ONE portfolio review](docs/helios-portfolio-review.md).

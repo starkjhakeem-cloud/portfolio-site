@@ -7,28 +7,86 @@ export const profile = {
   siteUrl: "https://portfolio-site-mu-sage.vercel.app",
 } as const;
 
-export type Project = {
+export type ProjectCategory = "Systems" | "Web" | "Mobile";
+
+type ProjectOverview = {
   id: string;
   number: string;
   title: string;
-  category: "Web" | "Mobile";
+  category: ProjectCategory;
   kind: string;
   description: string;
   stack: string[];
-  github: string;
-  demo?: string;
-  image: string;
-  imageAlt: string;
   details: { title: string; body: string }[];
 };
 
+export type Project = ProjectOverview &
+  (
+    | {
+        access: "proprietary";
+        github?: never;
+        demo?: never;
+        image?: never;
+        imageAlt?: never;
+      }
+    | {
+        access: "public";
+        github: string;
+        demo?: string;
+        image: string;
+        imageAlt: string;
+      }
+  );
+
 export const projects: Project[] = [
   {
-    id: "finance",
+    id: "helios",
     number: "01",
+    title: "HELIOS ONE",
+    category: "Systems",
+    access: "proprietary",
+    kind: "AI Systems Engineering",
+    description:
+      "My flagship independent research and development project: a proprietary AI platform connecting a native macOS companion with local backend services, persistent storage, and AI-provider integrations. A research prototype under active development.",
+    stack: ["Swift", "Python", "SQLite", "HTTP / WebSocket"],
+    details: [
+      {
+        title: "Project overview",
+        body: "An independent exploration of the engineering behind an AI platform: native desktop interaction, service communication, persistent data, and provider integration.",
+      },
+      {
+        title: "Native macOS development",
+        body: "Implemented a native Swift companion interface using macOS frameworks to interact with local services and display provider results.",
+      },
+      {
+        title: "Local services & communication",
+        body: "Implemented Python backend services with HTTP request/response communication and WebSocket messaging between the desktop client and local providers.",
+      },
+      {
+        title: "Persistent storage",
+        body: "SQLite-backed local persistence stores research records and associated application data between sessions.",
+      },
+      {
+        title: "AI-provider integration",
+        body: "Provider adapters connect the native application to supported AI capabilities, including Apple on-device models where available and local retrieval services. Integration with a provider is distinct from training a proprietary conversational model.",
+      },
+      {
+        title: "Current status & research direction",
+        body: "The native interface, local services, communications, storage, and provider integrations are implemented. Broader reasoning capabilities remain research goals. Further reliability work and evaluation are planned before broader use; full autonomy and production readiness are not established.",
+      },
+      {
+        title: "Proprietary development",
+        body: "Source code and internal implementation remain private. This overview shares selected engineering capabilities; the visual is a conceptual project identity, not an application screenshot.",
+      },
+    ],
+  },
+  {
+    id: "finance",
+    number: "02",
     title: "Finance Tracker Dashboard",
     category: "Web",
-    kind: "Data visualization · Personal finance",
+    access: "public",
+    kind: "Frontend Engineering",
     description:
       "Making everyday finances easier to understand. A dashboard that brings transactions, balances, and spending patterns into one clear view.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -69,10 +127,11 @@ export const projects: Project[] = [
   },
   {
     id: "jobs",
-    number: "02",
+    number: "03",
     title: "Job Application Tracker",
     category: "Mobile",
-    kind: "Mobile development · Career organization",
+    access: "public",
+    kind: "Mobile Engineering",
     description:
       "A little more clarity in the job search. A mobile application for organizing opportunities, tracking applications, and keeping the next step in sight.",
     stack: ["React Native", "TypeScript", "Expo"],

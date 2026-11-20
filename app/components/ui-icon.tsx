@@ -59,6 +59,12 @@ const paths = {
   plus: <path d="M12 5v14M5 12h14" />,
   menu: <path d="M4 7h16M4 17h16" />,
   close: <path d="m6 6 12 12M6 18 18 6" />,
+  lock: (
+    <>
+      <rect x="5" y="10" width="14" height="11" rx="2" />
+      <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" />
+    </>
+  ),
   globe: (
     <>
       <circle cx="12" cy="12" r="9" />

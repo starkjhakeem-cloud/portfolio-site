@@ -3,7 +3,7 @@ import { Orbit } from "@/app/components/orbit";
 import { ProjectShowcase } from "@/app/components/project-showcase";
 import { CopyEmail } from "@/app/components/copy-email";
 import { Icon } from "@/app/components/ui-icon";
-import { profile, skillGroups } from "@/app/data/portfolio";
+import { profile, projects, skillGroups } from "@/app/data/portfolio";
 
 export default function Portfolio() {
   return (
@@ -23,6 +23,32 @@ export default function Portfolio() {
             sameAs: [profile.github, profile.linkedin],
             description:
               "Software engineering student at Western Governors University and U.S. Army veteran building web and mobile applications.",
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Featured engineering projects",
+            numberOfItems: projects.length,
+            itemListElement: projects.map((project, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "CreativeWork",
+                name: project.title,
+                genre: project.kind,
+                description: project.description,
+                url: `${profile.siteUrl}/#project-${project.id}-title`,
+                author: { "@type": "Person", name: profile.name },
+                ...(project.access === "proprietary"
+                  ? { creativeWorkStatus: "In development; proprietary source" }
+                  : {}),
+              },
+            })),
           }).replace(/</g, "\\u003c"),
         }}
       />
@@ -141,10 +167,10 @@ export default function Portfolio() {
               </h2>
             </div>
             <p className="section-description">
-              A selection of my work across web and mobile.
+              Independent AI systems research, frontend,
               <br />
-              Practical problems, thoughtful interfaces,
-              <br className="desktop-break" /> and the code that connects them.
+              and mobile engineering. Selected projects,
+              <br className="desktop-break" /> from native systems to the web.
             </p>
           </div>
           <ProjectShowcase />

@@ -1,5 +1,7 @@
 # Portfolio refinement review
 
+> Historical refinement record through the two-project revision. The current three-project lineup, proprietary flagship, and latest validation are recorded in [the HELIOS ONE portfolio review](helios-portfolio-review.md).
+
 Review date: November 19, 2026. Repository: `starkjhakeem-cloud/portfolio-site`. Development branch: `portfolio-refresh-2026`. Local production review: http://127.0.0.1:3000.
 
 ## A. Implemented improvements

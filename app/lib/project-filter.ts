@@ -1,7 +1,14 @@
-export const projectFilters = ["All projects", "Web", "Mobile"] as const;
+import type { ProjectCategory } from "@/app/data/portfolio";
+
+export const projectFilters = [
+  "All projects",
+  "Systems",
+  "Web",
+  "Mobile",
+] as const;
 export type ProjectFilter = (typeof projectFilters)[number];
 
-export function filterProjects<T extends { category: "Web" | "Mobile" }>(
+export function filterProjects<T extends { category: ProjectCategory }>(
   projects: readonly T[],
   filter: ProjectFilter,
 ): T[] {
