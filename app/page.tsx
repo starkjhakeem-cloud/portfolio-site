@@ -1,126 +1,343 @@
-const projects = [
-  {
-    number: "01",
-    title: "Finance Tracker Dashboard",
-    category: "Web application",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    description: "A responsive finance dashboard for managing transactions, tracking balances, and exploring spending by category.",
-    highlights: ["Transaction CRUD workflows", "Calculated balances and visual reports", "Reusable responsive components"],
-    github: "https://github.com/starkjhakeem-cloud/finance-tracker-dashboard",
-  },
-  {
-    number: "02",
-    title: "Link & Notes",
-    category: "Full-stack application",
-    stack: ["Next.js", "TypeScript", "Supabase"],
-    description: "A productivity application for saving, organizing, searching, and tagging notes and links with cloud-backed persistence.",
-    highlights: ["Authentication and session handling", "Search and tagging", "Persistent cloud data"],
-    github: "https://github.com/starkjhakeem-cloud/link-notes-app",
-  },
-  {
-    number: "03",
-    title: "Job Application Tracker",
-    category: "Mobile application",
-    stack: ["React Native", "TypeScript", "Expo"],
-    description: "A mobile-first application for organizing job applications, tracking statuses, and reviewing application statistics.",
-    highlights: ["Search and status filtering", "Persistent local storage", "Reusable mobile components"],
-    github: "https://github.com/starkjhakeem-cloud/job-tracker-react-native",
-  },
-];
+import { Navigation } from "@/app/components/navigation";
+import { Orbit } from "@/app/components/orbit";
+import { ProjectShowcase } from "@/app/components/project-showcase";
+import { CopyEmail } from "@/app/components/copy-email";
+import { Icon } from "@/app/components/ui-icon";
+import { profile, skillGroups } from "@/app/data/portfolio";
 
-const skillGroups = [
-  { title: "Languages", items: ["TypeScript", "JavaScript", "HTML", "CSS"] },
-  { title: "Frontend & mobile", items: ["React", "React Native", "Next.js", "Tailwind CSS", "Expo"] },
-  { title: "Data & workflow", items: ["Supabase", "REST APIs", "Git", "GitHub", "Vercel"] },
-];
-
-const externalProps = { target: "_blank", rel: "noopener noreferrer" };
-
-export default function DeveloperPortfolio() {
+export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-[#080d18] text-slate-100">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[700px] overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-60 right-[-15%] h-[650px] w-[650px] rounded-full bg-blue-600/15 blur-[110px]" />
-        <div className="absolute left-[-20%] top-32 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[110px]" />
-      </div>
-
-      <header className="relative z-10 border-b border-white/10">
-        <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
-          <a href="#top" className="text-lg font-black tracking-[0.18em] text-white">JM<span className="text-cyan-400">.</span></a>
-          <div className="flex flex-wrap items-center justify-end gap-4 text-sm text-slate-300 sm:gap-7">
-            <a href="#projects" className="hover:text-cyan-300">Projects</a>
-            <a href="#about" className="hover:text-cyan-300">About</a>
-            <a href="#skills" className="hover:text-cyan-300">Skills</a>
-            <a href="#contact" className="rounded-full border border-cyan-400/40 px-4 py-2 text-cyan-200 hover:bg-cyan-400/10">Contact ↗</a>
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Navigation />
+      <main id="main">
+        <section
+          id="top"
+          className="hero container"
+          aria-labelledby="hero-title"
+        >
+          <div className="hero-content">
+            <p className="availability">
+              <span className="status-dot" /> OPEN TO INTERNSHIPS & EARLY-CAREER
+              ROLES
+            </p>
+            <p className="hero-intro">
+              Hey, I’m Jhakeem. <span className="intro-line" />
+            </p>
+            <h1 id="hero-title">
+              Thoughtful code.
+              <br />
+              Real-world
+              <br />
+              <span className="gradient-text">impact.</span>
+              <span className="heading-period" aria-hidden="true">
+                ↗
+              </span>
+            </h1>
+            <p className="hero-description">
+              Software engineering student. U.S. Army veteran.
+              <br className="desktop-break" /> Building useful web and mobile
+              experiences with
+              <br className="desktop-break" /> curiosity, discipline, and a
+              little attention to detail.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                Explore my work <Icon name="arrow" />
+              </a>
+              <a
+                className="button button-quiet"
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="github" width="18" height="18" /> GitHub{" "}
+                <Icon name="northeast" width="15" height="15" />
+              </a>
+            </div>
+            <div className="hero-footnote">
+              <span className="mono">
+                BASED IN CURIOSITY. BUILT WITH PURPOSE.
+              </span>
+            </div>
           </div>
-        </nav>
-      </header>
+          <Orbit />
+          <a className="scroll-cue mono" href="#projects">
+            <span className="scroll-icon">
+              <Icon name="down" width="14" height="14" />
+            </span>{" "}
+            SCROLL TO EXPLORE
+          </a>
+          <span className="hero-index mono" aria-hidden="true">
+            PORTFOLIO / 2026
+          </span>
+        </section>
 
-      <section id="top" className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-24 md:grid-cols-[1.3fr_0.7fr] md:items-center md:pt-32">
-        <div>
-          <p className="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-            <span className="h-2 w-2 rounded-full bg-cyan-400" /> Software engineering student · Open to opportunities
-          </p>
-          <h1 className="max-w-3xl text-5xl font-bold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Building software that <span className="bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent">solves real problems.</span>
-          </h1>
-          <p className="mt-7 text-xl font-semibold text-slate-200">Jhakeem Moultrie <span className="text-slate-500">/</span> Software Engineering Student & Developer</p>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400">
-            I design and build web and mobile applications with React, Next.js, React Native, and TypeScript. My work spans intuitive interfaces, authentication, data persistence, and practical product workflows.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <a href="#projects" className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">Explore my work ↗</a>
-            <a href="https://github.com/starkjhakeem-cloud" {...externalProps} className="rounded-xl border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-cyan-400/60">GitHub ↗</a>
-            <a href="mailto:starkjhakeem@gmail.com" className="rounded-xl border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-cyan-400/60">Get in touch</a>
+        <div className="tech-ribbon">
+          <div className="container">
+            <span className="mono ribbon-label">MY EVERYDAY TOOLKIT</span>
+            <div className="ribbon-technologies">
+              <span>
+                <span className="react-glyph" aria-hidden="true">
+                  ⚛
+                </span>{" "}
+                React
+              </span>
+              <span>
+                <span className="next-glyph" aria-hidden="true">
+                  N
+                </span>{" "}
+                Next.js
+              </span>
+              <span>
+                <span className="ts-glyph" aria-hidden="true">
+                  TS
+                </span>{" "}
+                TypeScript
+              </span>
+              <span>
+                <Icon name="terminal" /> React Native
+              </span>
+              <span>
+                <span className="tailwind-glyph" aria-hidden="true">
+                  ≈
+                </span>{" "}
+                Tailwind CSS
+              </span>
+            </div>
           </div>
         </div>
-        <div className="relative rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-blue-950/40">
-          <div className="mb-5 flex items-center gap-2 border-b border-white/10 pb-4"><span className="h-2.5 w-2.5 rounded-full bg-rose-400" /><span className="h-2.5 w-2.5 rounded-full bg-amber-400" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-400" /><span className="ml-auto font-mono text-xs text-slate-500">developer.ts</span></div>
-          <div className="space-y-3 font-mono text-sm leading-7">
-            <p className="text-violet-300">const <span className="text-white">developer</span> = {"{"}</p>
-            <p className="pl-4 text-slate-300">name: <span className="text-emerald-300">&quot;Jhakeem Moultrie&quot;</span>,</p>
-            <p className="pl-4 text-slate-300">focus: <span className="text-emerald-300">&quot;Web + Mobile&quot;</span>,</p>
-            <p className="pl-4 text-slate-300">education: <span className="text-emerald-300">&quot;WGU · B.S. SWE&quot;</span>,</p>
-            <p className="pl-4 text-slate-300">builds: <span className="text-cyan-300">3</span>,</p>
-            <p className="pl-4 text-slate-300">mindset: <span className="text-emerald-300">&quot;Keep shipping&quot;</span></p>
-            <p className="text-violet-300">{"}"};</p>
-          </div>
-          <div className="mt-7 grid grid-cols-2 gap-3 border-t border-white/10 pt-5 text-center">
-            <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-bold text-white">03</p><p className="mt-1 text-xs text-slate-400">Featured projects</p></div>
-            <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-bold text-white">02</p><p className="mt-1 text-xs text-slate-400">Platforms: web + mobile</p></div>
-          </div>
-        </div>
-      </section>
 
-      <section id="projects" className="relative border-y border-white/10 bg-white/[0.025] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">Selected work</p>
-          <div className="mt-3 flex flex-wrap items-end justify-between gap-5"><h2 className="text-4xl font-bold tracking-tight text-white">Projects built to be used.</h2><p className="max-w-sm text-sm leading-6 text-slate-400">A selection of applications exploring real product requirements, thoughtful interfaces, and maintainable code.</p></div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article key={project.number} className="flex flex-col rounded-2xl border border-white/10 bg-[#101a2b] p-7 transition hover:-translate-y-1 hover:border-cyan-400/40">
-                <div className="flex items-center justify-between"><span className="font-mono text-sm text-cyan-300">{project.number} / PROJECT</span><span className="text-xs text-slate-500">{project.category}</span></div>
-                <div className="my-7 flex h-28 items-center justify-center rounded-xl border border-white/5 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-transparent" aria-hidden="true"><span className="font-mono text-5xl font-black text-cyan-300/70">{project.number}</span></div>
-                <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-400">{project.description}</p>
-                <ul className="mt-5 space-y-2 text-sm text-slate-300">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span className="text-cyan-400">✓</span>{item}</li>)}</ul>
-                <div className="mt-6 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-md bg-white/5 px-2.5 py-1 text-xs text-cyan-200">{item}</span>)}</div>
-                <a href={project.github} {...externalProps} className="mt-8 inline-flex w-fit items-center gap-2 border-b border-cyan-400/50 pb-1 text-sm font-semibold text-cyan-300 hover:text-white">View source code ↗</a>
+        <section
+          id="projects"
+          className="section container"
+          aria-labelledby="projects-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">
+                <span>01</span> SELECTED WORK
+              </p>
+              <h2 id="projects-title">
+                Built to solve.
+                <br />
+                <span className="text-muted">Designed to matter.</span>
+              </h2>
+            </div>
+            <p className="section-description">
+              A selection of my work across web and mobile.
+              <br />
+              Practical problems, thoughtful interfaces,
+              <br className="desktop-break" /> and the code that connects them.
+            </p>
+          </div>
+          <ProjectShowcase />
+          <a
+            className="text-link all-repositories"
+            href={profile.github + "?tab=repositories"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            More from my development journey{" "}
+            <span>
+              Explore GitHub <Icon name="northeast" width="16" height="16" />
+            </span>
+          </a>
+        </section>
+
+        <section
+          id="about"
+          className="about-section section"
+          aria-labelledby="about-title"
+        >
+          <div className="container about-grid">
+            <div>
+              <p className="eyebrow">
+                <span>02</span> THE PERSON BEHIND THE CODE
+              </p>
+              <h2 id="about-title">
+                A different path.
+                <br />
+                <span className="text-muted">The same drive.</span>
+              </h2>
+              <div className="about-signature">
+                Jhakeem Moultrie<span>STUDENT. VETERAN. BUILDER.</span>
+              </div>
+            </div>
+            <div className="about-content">
+              <p className="about-lead">
+                I’ve always been drawn to figuring things out.
+                <br className="desktop-break" /> Now, I turn that curiosity into
+                software.
+              </p>
+              <p>
+                I’m pursuing a B.S. in Software Engineering at Western Governors
+                University, building practical experience through web and mobile
+                projects. I enjoy taking a problem, breaking it into smaller
+                pieces, and bringing those pieces together in an interface that
+                makes sense.
+              </p>
+              <p>
+                Before software, I served in the United States Army. That
+                experience shaped how I approach a challenge: show up, take
+                responsibility, work with the team, and keep learning. It’s the
+                same mindset I bring to every project.
+              </p>
+              <div className="about-facts">
+                <div>
+                  <Icon name="code" />
+                  <span>
+                    Currently studying<strong>B.S. Software Engineering</strong>
+                    <small>Western Governors University</small>
+                  </span>
+                </div>
+                <div>
+                  <Icon name="globe" />
+                  <span>
+                    Previously served<strong>United States Army</strong>
+                    <small>Discipline. Accountability. Teamwork.</small>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="skills"
+          className="section container"
+          aria-labelledby="skills-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">
+                <span>03</span> TECHNICAL TOOLKIT
+              </p>
+              <h2 id="skills-title">
+                The right tools.
+                <br />
+                <span className="text-muted">A builder’s mindset.</span>
+              </h2>
+            </div>
+            <p className="section-description">
+              The technologies I use to bring ideas to life.
+              <br />
+              Always learning. Always refining the craft.
+            </p>
+          </div>
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <article className="skill-card" key={group.number}>
+                <div className="skill-card-top">
+                  <span className="skill-icon">
+                    <Icon name={group.icon} width="24" height="24" />
+                  </span>
+                  <span className="mono">/ {group.number}</span>
+                </div>
+                <h3>{group.title}</h3>
+                <p>{group.subtitle}</p>
+                <ul className="skill-tags">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
+        </section>
+
+        <section
+          id="resume"
+          className="container resume-section"
+          aria-labelledby="resume-title"
+        >
+          <div className="resume-card">
+            <div className="resume-icon">
+              <Icon name="file" width="30" height="30" />
+            </div>
+            <div className="resume-copy">
+              <p className="eyebrow">THE SHORT VERSION</p>
+              <h2 id="resume-title">My background, in one place.</h2>
+              <p>
+                Education, technical skills, projects, and military experience.
+              </p>
+            </div>
+            <a
+              className="button button-outline"
+              href={profile.resume}
+              download="Jhakeem_Moultrie_Software_Engineer_Resume.pdf"
+            >
+              Download résumé <span className="mono">PDF</span>
+              <Icon name="download" width="18" height="18" />
+            </a>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className="section contact-section"
+          aria-labelledby="contact-title"
+        >
+          <div className="contact-glow" aria-hidden="true" />
+          <div className="container contact-content">
+            <p className="eyebrow">
+              <span>04</span> WHAT’S NEXT?
+            </p>
+            <p className="contact-availability">
+              <span className="status-dot" /> Open to a great next chapter
+            </p>
+            <h2 id="contact-title">
+              Good things start
+              <br />
+              with a <span className="gradient-text">conversation.</span>
+            </h2>
+            <p className="contact-description">
+              Have an internship, an engineering role, or an interesting
+              problem?
+              <br className="desktop-break" /> I’d love to hear about it. Let’s
+              build something useful.
+            </p>
+            <a className="contact-email" href={`mailto:${profile.email}`}>
+              {profile.email}
+              <Icon name="northeast" width="30" height="30" />
+            </a>
+            <div className="contact-actions">
+              <CopyEmail />
+              <span className="contact-divider" />
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn <Icon name="northeast" width="15" height="15" />
+              </a>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <Icon name="northeast" width="15" height="15" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="site-footer">
+        <div className="container footer-content">
+          <a href="#top" className="footer-brand" aria-label="Back to top">
+            jm<span>.</span>
+          </a>
+          <p>
+            © {new Date().getFullYear()} Jhakeem Moultrie
+            <span>Designed &amp; developed by Jhakeem Moultrie.</span>
+          </p>
+          <a className="back-top" href="#top">
+            Back to top <Icon name="arrow" width="16" height="16" />
+          </a>
         </div>
-      </section>
-
-      <section id="about" className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[0.65fr_1.35fr]">
-        <div><p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">About me</p><h2 className="mt-3 text-4xl font-bold text-white">Curiosity, discipline, and execution.</h2></div>
-        <div className="space-y-5 text-lg leading-8 text-slate-300"><p>I’m pursuing a B.S. in Software Engineering at Western Governors University while developing hands-on projects across web and mobile platforms.</p><p>My projects have given me practical experience with reusable component architecture, responsive UI, authentication, CRUD workflows, and persistent storage.</p><p>Before pursuing software engineering, I served in the U.S. Army. That experience shaped how I approach learning, accountability, teamwork, and solving difficult problems.</p></div>
-      </section>
-
-      <section id="skills" className="border-y border-white/10 bg-white/[0.025] py-20"><div className="mx-auto max-w-6xl px-6"><p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">Toolbox</p><h2 className="mt-3 text-4xl font-bold text-white">Technologies I work with.</h2><div className="mt-10 grid gap-5 md:grid-cols-3">{skillGroups.map((group) => <div key={group.title} className="rounded-2xl border border-white/10 bg-[#101a2b] p-6"><h3 className="mb-5 font-semibold text-white">{group.title}</h3><div className="flex flex-wrap gap-2">{group.items.map((item) => <span key={item} className="rounded-lg border border-white/10 px-3 py-2 text-sm text-slate-300">{item}</span>)}</div></div>)}</div></div></section>
-
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-24 text-center"><p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">Let’s connect</p><h2 className="mx-auto mt-4 max-w-2xl text-4xl font-bold text-white sm:text-5xl">Interested in building something meaningful?</h2><p className="mx-auto mt-5 max-w-xl leading-7 text-slate-400">I’m interested in software engineering internships and early-career opportunities where I can contribute, collaborate, and grow.</p><div className="mt-9 flex flex-wrap justify-center gap-3"><a href="mailto:starkjhakeem@gmail.com" className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300">Email me ↗</a><a href="https://www.linkedin.com/in/jhakeem-moultrie-29907b400/" {...externalProps} className="rounded-xl border border-white/20 px-6 py-3 font-semibold hover:border-cyan-400/60">LinkedIn ↗</a></div></section>
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">© {new Date().getFullYear()} Jhakeem Moultrie · Built with Next.js and TypeScript</footer>
-    </main>
+      </footer>
+    </>
   );
 }
