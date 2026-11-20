@@ -23,7 +23,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: calc(var(--header-height, 91px) + 24px);
 }
 body {
   margin: 0;
@@ -241,10 +241,11 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 9px;
-  letter-spacing: 1.1px;
+  font-size: 11px;
+  letter-spacing: 0.6px;
   color: #b2bdcc;
   margin-bottom: 36px;
+  line-height: 1.7;
 }
 .status-dot {
   display: inline-block;
@@ -381,6 +382,7 @@ h1 {
   aspect-ratio: 1;
   margin-right: -25px;
   align-self: center;
+  pointer-events: none;
 }
 .orbit-glow {
   position: absolute;
@@ -576,7 +578,7 @@ h2 {
   font-weight: 500;
 }
 .section-description {
-  font-size: 13px;
+  font-size: 14px;
   color: #99a5b7;
   line-height: 1.9;
   max-width: 350px;
@@ -663,7 +665,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #90c9ef;
   margin-bottom: 23px;
@@ -672,7 +674,7 @@ h2 {
   color: #6c839f;
 }
 .project-kind {
-  font-size: 10px;
+  font-size: 11px;
   color: #8c9caf;
   margin-bottom: 10px;
 }
@@ -687,7 +689,7 @@ h2 {
   font-size: 32px;
 }
 .project-description {
-  font-size: 12px;
+  font-size: 14px;
   color: #9faabb;
   line-height: 1.9;
   margin-top: 15px;
@@ -699,7 +701,7 @@ h2 {
   margin-top: 23px;
 }
 .tag-list li {
-  font-size: 9px;
+  font-size: 11px;
   color: #b3c1d3;
   background: #ffffff04;
   border: 1px solid #ffffff10;
@@ -710,12 +712,13 @@ h2 {
   display: flex;
   gap: 23px;
   margin-top: 26px;
+  flex-wrap: wrap;
 }
 .project-links > a {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: #dbe7f8;
   min-height: 44px;
@@ -737,7 +740,10 @@ h2 {
 .project-finance .project-visual {
   border-bottom: 0;
   border-right: 1px solid var(--line);
-  min-height: 470px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  padding: 68px 28px 44px;
 }
 .project-visual::before {
   content: "";
@@ -766,18 +772,17 @@ h2 {
   letter-spacing: 1.2px;
 }
 .project-image-frame {
-  position: absolute;
+  position: relative;
   transition: transform 0.6s;
+  margin-inline: auto;
 }
 .finance-visual .project-image-frame {
-  top: 80px;
-  left: 36px;
-  right: 25px;
   border: 1px solid #566d8c70;
   border-radius: 9px;
   overflow: hidden;
-  transform: perspective(1000px) rotateY(7deg) rotateZ(-3deg);
+  transform: perspective(1000px) rotateY(3deg) rotateZ(-2deg);
   box-shadow: 0 25px 70px #0006;
+  width: 100%;
 }
 .project-card:hover .finance-visual .project-image-frame {
   transform: perspective(1000px) rotateY(0deg) rotateZ(-1deg) translateY(-5px);
@@ -811,17 +816,15 @@ h2 {
 .jobs-visual {
   background:
     radial-gradient(ellipse at 70% 70%, #21568055, transparent 70%), #0c1620;
-  min-height: 310px;
+  min-height: 450px;
+  padding: 50px 25px 35px;
 }
 .jobs-visual .project-image-frame {
-  width: 210px;
-  top: 49px;
-  left: 50%;
-  margin-left: -105px;
+  width: 170px;
   border: 5px solid #253548;
   border-radius: 30px;
   overflow: hidden;
-  transform: rotate(9deg);
+  transform: rotate(6deg);
   box-shadow: -20px 20px 60px #0005;
 }
 .project-card:hover .jobs-visual .project-image-frame {
@@ -841,7 +844,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  font-size: 10px;
+  font-size: 13px;
   color: #aab8cd;
   padding-top: 18px;
   min-height: 44px;
@@ -865,20 +868,20 @@ h2 {
   margin-top: 18px;
 }
 .project-details h4 {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 550;
   color: #d5e1f1;
   margin-bottom: 7px;
 }
 .project-details p {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.9;
   color: #9caabf;
 }
 .notes-visual {
   display: grid;
   place-items: center;
-  min-height: 310px;
+  min-height: 450px;
   background:
     radial-gradient(ellipse at 45% 50%, #203f5760, transparent 70%), #0b141e;
 }
@@ -929,7 +932,7 @@ h2 {
   opacity: 0.4;
 }
 .source-note {
-  font-size: 10px;
+  font-size: 12px;
   color: #8fa2b7;
   display: flex;
   gap: 9px;
@@ -994,7 +997,7 @@ h2 {
   letter-spacing: -0.5px;
 }
 .about-content > p {
-  font-size: 13px;
+  font-size: 14px;
   color: #9ca8b9;
   line-height: 1.95;
   margin-bottom: 22px;
@@ -1024,14 +1027,14 @@ h2 {
 .about-facts strong {
   display: block;
   color: #d0dce9;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   margin-top: 3px;
 }
 .about-facts small {
   display: block;
   color: #8c9cb1;
-  font-size: 8px;
+  font-size: 11px;
   margin-top: 4px;
 }
 .skills-grid {
@@ -1194,7 +1197,7 @@ h2 {
   letter-spacing: -3px;
 }
 .contact-description {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
   color: #9aa8ba;
   margin-top: 27px;
@@ -1230,6 +1233,7 @@ h2 {
   font-size: 10px;
   color: #9eafc4;
   min-height: 55px;
+  position: relative;
 }
 .contact-actions > a {
   display: flex;
@@ -1254,15 +1258,15 @@ h2 {
   color: var(--cyan);
 }
 .copy-email-wrap {
-  position: relative;
+  position: static;
 }
 .copy-status {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 46px;
-  width: 210px;
-  font-size: 9px;
+  top: 100%;
+  width: min(300px, 100%);
+  font-size: 12px;
   line-height: 1.6;
   color: #9bc4df;
 }
@@ -1287,13 +1291,17 @@ h2 {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -3px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
 }
 .footer-brand > span {
   color: var(--cyan);
   margin-left: 2px;
 }
 .footer-content > p {
-  font-size: 9px;
+  font-size: 11px;
   color: #92a0b3;
   display: flex;
   gap: 24px;
@@ -1302,11 +1310,13 @@ h2 {
   color: #7d8b9e;
 }
 .back-top {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 13px;
-  font-size: 9px;
+  font-size: 11px;
   color: #a0afc2;
+  min-height: 44px;
+  min-width: 44px;
 }
 .back-top > svg {
   transform: rotate(-90deg);
@@ -1361,8 +1371,9 @@ h2 {
     font-size: 48px;
   }
   .availability {
-    font-size: 7px;
-    letter-spacing: 0.7px;
+    font-size: 9px;
+    letter-spacing: 0.6px;
+    line-height: 1.7;
   }
   .orbit-label {
     padding: 12px;
@@ -1403,12 +1414,14 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
   .project-finance .project-visual {
-    min-height: 460px;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    padding: 68px 28px 44px;
   }
   .finance-visual .project-image-frame {
-    left: 23px;
-    right: -20px;
-    top: 100px;
+    width: 100%;
+    transform: perspective(1000px) rotateY(3deg) rotateZ(-2deg);
   }
   .about-grid {
     gap: 50px;
@@ -1434,7 +1447,7 @@ h2 {
     width: calc(100% - 40px);
   }
   html {
-    scroll-padding-top: 92px;
+    scroll-padding-top: calc(var(--header-height, 91px) + 24px);
   }
   .navigation {
     min-height: 76px;
@@ -1461,33 +1474,6 @@ h2 {
   }
   .navigation-links {
     display: none;
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
-    padding: 16px 24px 24px;
-    background: #0d131cf7;
-    border-bottom: 1px solid #ffffff20;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 30px #0005;
-  }
-  .navigation-links.is-open {
-    display: flex;
-    align-items: stretch;
-    gap: 4px;
-    flex-direction: column;
-  }
-  .navigation-links > a {
-    padding: 14px 12px;
-  }
-  .navigation-links > a[aria-current]::after {
-    left: 0;
-    bottom: 20px;
-  }
-  .navigation-links > .nav-resume {
-    margin: 10px 0 0;
-    justify-content: space-between;
-    padding: 14px 12px;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -1499,9 +1485,10 @@ h2 {
     max-width: 520px;
   }
   .availability {
-    font-size: 7px;
-    letter-spacing: 0.8px;
+    font-size: 9px;
+    letter-spacing: 0.6px;
     margin-bottom: 30px;
+    line-height: 1.7;
   }
   .hero-intro {
     font-size: 15px;
@@ -1517,7 +1504,7 @@ h2 {
     margin-left: 16px;
   }
   .hero-description {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.9;
     margin-top: 23px;
     max-width: 400px;
@@ -1539,6 +1526,7 @@ h2 {
     width: min(440px, 100%);
     margin: 42px auto 30px;
     aspect-ratio: 1.13;
+    pointer-events: none;
   }
   .orbit-geometry {
     inset: -6% 0;
@@ -1632,7 +1620,7 @@ h2 {
     letter-spacing: -1.5px;
   }
   .section-description {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 22px;
     line-height: 1.85;
   }
@@ -1669,21 +1657,23 @@ h2 {
     grid-column: auto;
   }
   .project-finance .project-visual {
-    min-height: 300px;
+    min-height: 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 60px 24px 40px;
   }
   .finance-visual .project-image-frame {
-    left: 30px;
-    right: 20px;
-    top: 59px;
+    width: 100%;
+    transform: perspective(1000px) rotateY(3deg) rotateZ(-2deg);
   }
   .project-finance > .project-content,
   .project-content {
     padding: 25px;
   }
   .project-overline {
-    font-size: 8px;
+    font-size: 10px;
     margin-bottom: 19px;
   }
   .project-finance h3,
@@ -1691,10 +1681,10 @@ h2 {
     font-size: 27px;
   }
   .project-kind {
-    font-size: 9px;
+    font-size: 11px;
   }
   .project-description {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.85;
   }
   .tag-list {
@@ -1702,20 +1692,20 @@ h2 {
     gap: 6px;
   }
   .tag-list > li {
-    font-size: 8px;
+    font-size: 11px;
     padding: 6px 8px;
   }
   .project-links {
     margin-top: 21px;
+    flex-wrap: wrap;
   }
   .jobs-visual,
   .notes-visual {
-    min-height: 280px;
+    min-height: 400px;
   }
   .jobs-visual .project-image-frame {
-    width: 185px;
-    margin-left: -92px;
-    top: 37px;
+    width: 150px;
+    transform: rotate(6deg);
   }
   .visual-corner {
     font-size: 6px;
@@ -1752,16 +1742,16 @@ h2 {
     font-size: 19px !important;
   }
   .about-content > p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .about-facts {
     gap: 20px;
   }
   .about-facts strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .about-facts small {
-    font-size: 7px;
+    font-size: 11px;
   }
   .skills-grid {
     grid-template-columns: 1fr;
@@ -1836,7 +1826,7 @@ h2 {
     letter-spacing: -1.6px;
   }
   .contact-description {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 22px;
     max-width: 400px;
     margin-inline: auto;
@@ -1855,15 +1845,17 @@ h2 {
     gap: 17px;
     font-size: 9px;
     margin-top: 21px;
+    position: relative;
   }
   .copy-email {
     font-size: 9px;
     gap: 7px;
   }
   .copy-status {
-    font-size: 8px;
-    width: 155px;
-    left: 70%;
+    font-size: 12px;
+    width: min(300px, 100%);
+    left: 50%;
+    top: 100%;
   }
   .contact-actions > a {
     gap: 5px;
@@ -1881,13 +1873,21 @@ h2 {
     flex-wrap: wrap;
     gap: 8px;
     justify-content: space-between;
-    font-size: 8px;
+    font-size: 11px;
   }
   .footer-brand {
     font-size: 25px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
   }
   .back-top {
-    font-size: 9px;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
   }
   .desktop-break {
     display: none;
@@ -1902,8 +1902,9 @@ h2 {
     letter-spacing: -2.8px;
   }
   .availability {
-    font-size: 6px;
-    letter-spacing: 0.4px;
+    font-size: 9px;
+    letter-spacing: 0.6px;
+    line-height: 1.7;
   }
   .hero-actions .button {
     padding-inline: 14px;
@@ -1934,6 +1935,7 @@ h2 {
   }
   .contact-actions {
     gap: 12px;
+    position: relative;
   }
   .resume-card {
     padding: 22px;
@@ -1946,6 +1948,7 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-padding-top: calc(var(--header-height, 91px) + 24px);
   }
   *,
   *::before,
@@ -2046,6 +2049,7 @@ h2 {
 @media (min-width: 768px) and (max-width: 1100px) {
   .orbit-scene {
     margin-right: 0;
+    pointer-events: none;
   }
 }
 @media (min-width: 768px) and (max-width: 900px) {
@@ -2071,4 +2075,136 @@ h2 {
   padding: 16px;
   border-bottom: 1px solid var(--line);
   font-size: 13px;
+}
+:where(main, section)[tabindex="-1"]:focus {
+  outline: none;
+}
+html {
+  scrollbar-gutter: stable;
+}
+.mobile-navigation-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--foreground);
+  background: #0d131c;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mobile-navigation-dialog::backdrop {
+  background: #080b10;
+}
+.mobile-navigation-dialog[open] {
+  display: block;
+}
+.mobile-dialog-inner {
+  width: min(600px, calc(100% - 40px));
+  margin-inline: auto;
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+}
+.mobile-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 76px;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-navigation-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 28px;
+}
+.mobile-navigation-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 14px 12px;
+  border-radius: 5px;
+  font-size: 17px;
+  color: #c9d6e7;
+}
+.mobile-navigation-links > a:hover,
+.mobile-navigation-links > a[aria-current] {
+  background: #192538;
+  color: var(--cyan);
+}
+.mobile-navigation-links > .nav-resume {
+  border: 1px solid #ffffff25;
+  margin-top: 16px;
+  font-size: 15px;
+}
+@media (max-width: 900px) {
+  .navigation {
+    min-height: 76px;
+  }
+  .navigation-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ffffff25;
+    border-radius: 5px;
+    background: #121a26;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .project-finance {
+    display: block;
+  }
+  .project-finance .project-visual {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .finance-visual .project-image-frame {
+    max-width: 560px;
+  }
+}
+.project-grid[data-result-count="1"] {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1025px) {
+  .project-grid[data-result-count="1"] .project-jobs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .notes-visual {
+    min-height: 400px;
+  }
+  .project-content h3,
+  .project-finance h3 {
+    overflow-wrap: anywhere;
+  }
+  .contact-actions {
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .contact-actions > a,
+  .copy-email {
+    font-size: 12px;
+  }
+  .copy-status {
+    font-size: 12px;
+    width: min(300px, 100%);
+    left: 50%;
+    top: 100%;
+  }
+  .resume-card > .button {
+    font-size: 13px;
+  }
 }

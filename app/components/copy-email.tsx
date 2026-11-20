@@ -2,25 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 import { profile } from "@/app/data/portfolio";
+import { copyText } from "@/app/lib/clipboard";
 import { Icon } from "./ui-icon";
 
 export function CopyEmail() {
-  const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "copying" | "copied" | "failed"
+  >("idle");
+  const mounted = useRef(true);
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
       if (timeout.current) clearTimeout(timeout.current);
-    },
-    [],
-  );
+    };
+  }, []);
   async function copy() {
-    try {
-      await navigator.clipboard.writeText(profile.email);
-      setStatus("copied");
-    } catch {
-      setStatus("failed");
-    }
     if (timeout.current) clearTimeout(timeout.current);
+    setStatus("copying");
+    const result = await copyText(profile.email, navigator.clipboard);
+    if (!mounted.current) return;
+    setStatus(result);
     timeout.current = setTimeout(() => setStatus("idle"), 4500);
   }
   return (
@@ -30,13 +33,21 @@ export function CopyEmail() {
         onClick={copy}
         className="copy-email"
         aria-label="Copy email address"
+        aria-busy={status === "copying"}
+        disabled={status === "copying"}
       >
         <Icon
           name={status === "copied" ? "check" : "copy"}
           width="17"
           height="17"
         />
-        <span>{status === "copied" ? "Copied!" : "Copy email"}</span>
+        <span>
+          {status === "copied"
+            ? "Copied!"
+            : status === "copying"
+              ? "Copying…"
+              : "Copy email"}
+        </span>
       </button>
       <span className="copy-status" role="status">
         {status === "failed"

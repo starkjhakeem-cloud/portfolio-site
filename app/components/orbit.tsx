@@ -1,6 +1,6 @@
 export function Orbit() {
   return (
-    <div className="orbit-scene" aria-hidden="true">
+    <div className="orbit-scene" aria-hidden="true" inert>
       <div className="orbit-coordinates">
         <span>IDEAS → SYSTEMS → EXPERIENCES</span>
         <span>FIG. 01 / THE INTERSECTION</span>

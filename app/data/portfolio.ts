@@ -41,15 +41,31 @@ export const projects: Project[] = [
     details: [
       {
         title: "The problem",
-        body: "Income and expense records are more useful when they can be reviewed together. This project connects transaction entry with a visual overview of personal spending.",
+        body: "Transaction records are difficult to interpret without a clear view of income, expenses, and categorized spending.",
       },
       {
-        title: "The implementation",
-        body: "React state drives transaction creation, editing, and deletion. Dashboard components derive income, expenses, balance, and the top spending category from the same transaction data. Recharts renders expense and income-versus-expense charts.",
+        title: "The solution",
+        body: "A single dashboard connects transaction entry and editing with balances, spending categories, and income-versus-expense charts.",
       },
       {
-        title: "Data & scope",
-        body: "Transactions persist in browser localStorage. This is a client-side application; the current repository does not implement authentication or a cloud database.",
+        title: "Architecture",
+        body: "A Next.js client page coordinates typed React state. Separate form, list, dashboard, and Recharts components consume the transaction data; Tailwind CSS styles the interface.",
+      },
+      {
+        title: "Implementation",
+        body: "Transactions can be created, edited, and deleted. Totals and category/date aggregates are derived from the current records, which persist in browser localStorage.",
+      },
+      {
+        title: "Technical trade-off",
+        body: "Browser storage makes the dashboard self-contained without accounts or a backend. Records belong to the current browser and do not synchronize between devices.",
+      },
+      {
+        title: "Engineering considerations",
+        body: "Totals, categories, and charts are derived from one changing transaction list. That keeps transaction edits connected to the summaries without maintaining separate copies of the calculated data.",
+      },
+      {
+        title: "Future improvements",
+        body: "The project README proposes authentication, cloud storage, CSV export, and budget goals. Stronger amount validation and storage recovery are additional next steps, not completed features.",
       },
     ],
   },
@@ -70,15 +86,31 @@ export const projects: Project[] = [
     details: [
       {
         title: "The problem",
-        body: "A job search spans companies, roles, dates, and changing statuses. This application puts those records and a summary of the pipeline in a single mobile interface.",
+        body: "A job search involves companies, roles, application dates, and changing statuses that need to stay organized.",
       },
       {
-        title: "The implementation",
-        body: "Reusable application-card and form components support adding, editing, and deleting records. Company and role search combines with status filtering, while dashboard counts are calculated from the application list.",
+        title: "The solution",
+        body: "A mobile application list brings editable records, company/role search, status selection, and calculated pipeline counts together.",
       },
       {
-        title: "Data & interaction",
-        body: "AsyncStorage keeps records on the device. React Native’s Animated API handles form and dashboard transitions, and Expo Haptics supplies touch feedback. No hosted web demonstration is published in the repository.",
+        title: "Architecture",
+        body: "An Expo Router screen coordinates typed React Native state, reusable application-card and modal-form components, and AsyncStorage. The Animated API and Expo Haptics provide interaction feedback.",
+      },
+      {
+        title: "Implementation",
+        body: "Users can add, edit, and delete applications. Search and status selection narrow the records, while dashboard counts are derived from the underlying application list.",
+      },
+      {
+        title: "Technical trade-off",
+        body: "AsyncStorage keeps records on the device without requiring a server. This supports local use; it does not provide an account or cross-device synchronization.",
+      },
+      {
+        title: "Known limitations",
+        body: "The source uses “Offers” in one filter chip and “Offer” in stored records, so that chip needs normalization. Persistence initialization and date validation also need further testing. These limitations belong to the project prototype.",
+      },
+      {
+        title: "Future improvements",
+        body: "Normalize status values, strengthen validation and storage recovery, and then explore optional backup or synchronization. These are proposed next steps, not existing capabilities.",
       },
     ],
   },
@@ -89,7 +121,7 @@ export const projects: Project[] = [
     category: "Web",
     kind: "Project archive",
     description:
-      "Another part of my development journey. Get in touch to learn more about this project and its current source availability.",
+      "Listed from earlier portfolio records. Its source code and a working demonstration could not be verified. Get in touch for current project information.",
     stack: [],
     verified: false,
     details: [],
@@ -118,7 +150,7 @@ export const skillGroups = [
     subtitle: "Connecting the pieces",
     icon: "database" as const,
     items: [
-      "Supabase",
+      "Supabase (familiarity)",
       "REST APIs",
       "Authentication",
       "React state",

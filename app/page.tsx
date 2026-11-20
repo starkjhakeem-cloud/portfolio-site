@@ -12,9 +12,24 @@ export default function Portfolio() {
         Skip to content
       </a>
       <Navigation />
-      <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: profile.name,
+            url: profile.siteUrl,
+            sameAs: [profile.github, profile.linkedin],
+            description:
+              "Software engineering student at Western Governors University and U.S. Army veteran building web and mobile applications.",
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+      <main id="main" tabIndex={-1}>
         <section
           id="top"
+          tabIndex={-1}
           className="hero container"
           aria-labelledby="hero-title"
         >
@@ -37,11 +52,9 @@ export default function Portfolio() {
               </span>
             </h1>
             <p className="hero-description">
-              Software engineering student. U.S. Army veteran.
-              <br className="desktop-break" /> Building useful web and mobile
-              experiences with
-              <br className="desktop-break" /> curiosity, discipline, and a
-              little attention to detail.
+              B.S. Software Engineering student at WGU and U.S. Army veteran. I
+              build frontend, full-stack, and mobile applications with React,
+              Next.js, TypeScript, and React Native.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">
@@ -112,6 +125,7 @@ export default function Portfolio() {
 
         <section
           id="projects"
+          tabIndex={-1}
           className="section container"
           aria-labelledby="projects-title"
         >
@@ -149,6 +163,7 @@ export default function Portfolio() {
 
         <section
           id="about"
+          tabIndex={-1}
           className="about-section section"
           aria-labelledby="about-title"
         >
@@ -174,16 +189,22 @@ export default function Portfolio() {
               </p>
               <p>
                 I’m pursuing a B.S. in Software Engineering at Western Governors
-                University, building practical experience through web and mobile
-                projects. I enjoy taking a problem, breaking it into smaller
-                pieces, and bringing those pieces together in an interface that
-                makes sense.
+                University while independently building web and mobile
+                applications. My focus is frontend engineering, with hands-on
+                experience connecting interfaces to application logic,
+                authentication, and persistent data.
               </p>
               <p>
-                Before software, I served in the United States Army. That
-                experience shaped how I approach a challenge: show up, take
-                responsibility, work with the team, and keep learning. It’s the
-                same mindset I bring to every project.
+                I’m also interested in artificial intelligence and intelligent
+                software systems. I explore that interest alongside practical
+                projects, with an emphasis on understanding how the underlying
+                systems work.
+              </p>
+              <p>
+                My service in the United States Army shaped my approach to
+                teamwork, accountability, and problem-solving. I bring that
+                discipline to learning new technologies and working through
+                engineering problems.
               </p>
               <div className="about-facts">
                 <div>
@@ -207,6 +228,7 @@ export default function Portfolio() {
 
         <section
           id="skills"
+          tabIndex={-1}
           className="section container"
           aria-labelledby="skills-title"
         >
@@ -250,6 +272,7 @@ export default function Portfolio() {
 
         <section
           id="resume"
+          tabIndex={-1}
           className="container resume-section"
           aria-labelledby="resume-title"
         >
@@ -268,6 +291,7 @@ export default function Portfolio() {
               className="button button-outline"
               href={profile.resume}
               download="Jhakeem_Moultrie_Software_Engineer_Resume.pdf"
+              aria-label="Download résumé: Jhakeem Moultrie (PDF)"
             >
               Download résumé <span className="mono">PDF</span>
               <Icon name="download" width="18" height="18" />
@@ -277,6 +301,7 @@ export default function Portfolio() {
 
         <section
           id="contact"
+          tabIndex={-1}
           className="section contact-section"
           aria-labelledby="contact-title"
         >

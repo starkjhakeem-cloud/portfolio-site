@@ -4,8 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { profile, projects, type Project } from "@/app/data/portfolio";
 import { Icon } from "./ui-icon";
-
-const filters = ["All projects", "Web", "Mobile"] as const;
+import {
+  filterProjects,
+  projectFilters,
+  type ProjectFilter,
+} from "@/app/lib/project-filter";
 
 function ProjectVisual({ project }: { project: Project }) {
   if (!project.image)
@@ -43,7 +46,11 @@ function ProjectVisual({ project }: { project: Project }) {
           alt={project.imageAlt ?? project.title}
           width={project.id === "finance" ? 1200 : 540}
           height={project.id === "finance" ? 1057 : 1163}
-          sizes="(max-width: 767px) 90vw, (max-width: 1199px) 50vw, 650px"
+          sizes={
+            project.id === "jobs"
+              ? "(max-width: 767px) 140px, 160px"
+              : "(max-width: 767px) calc(100vw - 100px), (max-width: 1024px) calc(100vw - 120px), 600px"
+          }
         />
       </div>
       <span className="visual-caption">ACTUAL PROJECT SCREENSHOT</span>
@@ -79,18 +86,28 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </ul>
         ) : (
-          <p className="source-note">
-            <span className="status-dot muted-dot" /> Repository currently
-            unavailable
+          <p className="source-note" role="note">
+            <span className="status-dot muted-dot" /> Source and demonstration
+            unverified
           </p>
         )}
         <div className="project-links">
+          {project.image ? (
+            <a
+              href={project.image}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View screenshot: ${project.title} (opens in new tab)`}
+            >
+              View screenshot <Icon name="northeast" width="15" height="15" />
+            </a>
+          ) : null}
           {project.github ? (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${project.title} source on GitHub (opens in new tab)`}
+              aria-label={`View source: ${project.title} on GitHub (opens in new tab)`}
             >
               <Icon name="github" width="17" height="17" /> View source{" "}
               <Icon name="northeast" width="15" height="15" />
@@ -111,7 +128,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         {project.details.length > 0 ? (
           <details className="project-details">
-            <summary>
+            <summary aria-label={`Behind the build: ${project.title}`}>
               Behind the build <Icon name="plus" width="18" height="18" />
             </summary>
             <div>
@@ -130,11 +147,8 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export function ProjectShowcase() {
-  const [filter, setFilter] =
-    useState<(typeof filters)[number]>("All projects");
-  const visible = projects.filter(
-    (project) => filter === "All projects" || project.category === filter,
-  );
+  const [filter, setFilter] = useState<ProjectFilter>("All projects");
+  const visible = filterProjects(projects, filter);
   return (
     <>
       <div className="project-toolbar">
@@ -143,7 +157,7 @@ export function ProjectShowcase() {
           role="group"
           aria-label="Filter projects by platform"
         >
-          {filters.map((item) => (
+          {projectFilters.map((item) => (
             <button
               type="button"
               key={item}
@@ -153,12 +167,7 @@ export function ProjectShowcase() {
             >
               {item}
               <span>
-                {String(
-                  projects.filter(
-                    (project) =>
-                      item === "All projects" || project.category === item,
-                  ).length,
-                ).padStart(2, "0")}
+                {String(filterProjects(projects, item).length).padStart(2, "0")}
               </span>
             </button>
           ))}
@@ -170,6 +179,8 @@ export function ProjectShowcase() {
       </div>
       <div
         id="project-results"
+        key={filter}
+        data-result-count={visible.length}
         className={`project-grid ${filter !== "All projects" ? "is-filtered" : ""}`}
       >
         {visible.map((project) => (
