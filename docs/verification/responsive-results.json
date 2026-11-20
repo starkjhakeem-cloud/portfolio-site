@@ -1,0 +1,332 @@
+[
+  {
+    "documentWidth": 320,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 288,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 288
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 288
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 320
+  },
+  {
+    "documentWidth": 360,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 320,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 320
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 320
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 360
+  },
+  {
+    "documentWidth": 375,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 335,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 335
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 335
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 375
+  },
+  {
+    "documentWidth": 390,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 350,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 350
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 350
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 390
+  },
+  {
+    "documentWidth": 414,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 374,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 374
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 374
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 414
+  },
+  {
+    "documentWidth": 430,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 390,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 390
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 390
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 430
+  },
+  {
+    "documentWidth": 768,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 704,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 704
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 704
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 768
+  },
+  {
+    "documentWidth": 1024,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 960,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "1fr 1fr",
+        "title": "Finance Tracker Dashboard",
+        "width": 960
+      },
+      {
+        "columns": "1fr 1fr",
+        "title": "Job Application Tracker",
+        "width": 960
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 1024
+  },
+  {
+    "documentWidth": 1280,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1184,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "644.727px 537.273px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1184
+      },
+      {
+        "columns": "644.727px 537.273px",
+        "title": "Job Application Tracker",
+        "width": 1184
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 1280
+  },
+  {
+    "documentWidth": 1440,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1200,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "653.453px 544.547px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1200
+      },
+      {
+        "columns": "653.453px 544.547px",
+        "title": "Job Application Tracker",
+        "width": 1200
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 1440
+  },
+  {
+    "documentWidth": 1920,
+    "filters": ["All projects02", "Web01", "Mobile01"],
+    "gridWidth": 1200,
+    "images": [
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      },
+      {
+        "loaded": true,
+        "ratioCorrect": true
+      }
+    ],
+    "outOfBoundsControls": [],
+    "projects": [
+      {
+        "columns": "653.453px 544.547px",
+        "title": "Finance Tracker Dashboard",
+        "width": 1200
+      },
+      {
+        "columns": "653.453px 544.547px",
+        "title": "Job Application Tracker",
+        "width": 1200
+      }
+    ],
+    "removedProjectVisible": false,
+    "width": 1920
+  }
+]
